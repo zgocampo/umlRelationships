@@ -1,11 +1,14 @@
 #Exercise 1
 class Person:
     def __init__(self,name,age):
-        self.age = age
+        self.__age = age
         self.name = name
 
-    def display_info(self):
-        print(f"Name: {self.name}, Age: {self.age}")
+    def get_age(self):
+        return self.__age
+person = Person("LINA", 20)
 
-person1 = Person("mike",67)
-person1.display_info()
+print(f"Name: {person.name}")
+print(f"Age: {person.get_age()}")
+
+#IT is better to access __age by get_age becuase it allows you to control how data is accessed and modified
